@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<module>
+	    <source path="" includes="DocumentCompleteJSON.java"/>
+	    <source path="" includes="DocumentsJSON.java"/>
+	    <source path="" includes="GrammarJSON.java"/>
+	    <source path="" includes="OperationalValueJSON.java"/>
+	    <source path="" includes="Interconect.java"/>
+	    <source path="" includes="OperationalValueTypeJSON.java"/>
+	    <source path="" includes="Parameter.java"/>
+	    <source path="" includes="StructureJSON.java"/>
+	</module>
