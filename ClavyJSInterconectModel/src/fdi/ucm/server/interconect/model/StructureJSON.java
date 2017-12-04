@@ -67,12 +67,12 @@ public class StructureJSON implements Serializable{
 	 * @param name Nombre del atributo.
 	 * @param browseable Define si es navegable
 	 */
-		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,boolean browseable,boolean Selected,boolean filtro, Long ClaseOf,String Value,ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture) {
+		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,boolean browseable,boolean Selected,boolean filtro, Long ClaseOf,String Value,ArrayList<OperationalValueTypeJSON> OperationalTypeValues,ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture) {
 			super();
 			Sons=new ArrayList<StructureJSON>();	
 			this.Id=id;
 			Name = name;
-			Shows=new ArrayList<OperationalValueTypeJSON>();
+			Shows=OperationalTypeValues;
 			Multivalued=multivalued;
 			Browseable=browseable;
 			this.ClaseOf=ClaseOf;
