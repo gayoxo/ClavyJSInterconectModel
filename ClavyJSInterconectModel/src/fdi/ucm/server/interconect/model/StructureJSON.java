@@ -32,6 +32,8 @@ public class StructureJSON implements Serializable{
 	
 	protected boolean Selected;
 	
+	protected boolean Extended;
+	
 	protected boolean Filtro;
 	
 	protected Long ClaseOf;
@@ -59,6 +61,7 @@ public class StructureJSON implements Serializable{
 		Value="";
 		OperationalValues=new ArrayList<OperationalValueJSON>();
 		TypeOfStructure=TypeOfStructureEnum.Basic;
+		Extended=false;
 	}
 	
 	
@@ -67,7 +70,7 @@ public class StructureJSON implements Serializable{
 	 * @param name Nombre del atributo.
 	 * @param browseable Define si es navegable
 	 */
-		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,boolean browseable,boolean Selected,boolean filtro, Long ClaseOf,String Value,ArrayList<OperationalValueTypeJSON> OperationalTypeValues,ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture) {
+		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,boolean browseable,boolean Selected,boolean extended,boolean filtro, Long ClaseOf,String Value,ArrayList<OperationalValueTypeJSON> OperationalTypeValues,ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture) {
 			super();
 			Sons=new ArrayList<StructureJSON>();	
 			this.Id=id;
@@ -81,6 +84,7 @@ public class StructureJSON implements Serializable{
 			this.Value=Value;
 			this.OperationalValues=OperationalValues;
 			this.TypeOfStructure=typeOfStruture;
+			Extended=extended;
 		}
 
 
@@ -236,6 +240,14 @@ public TypeOfStructureEnum getTypeOfStructure() {
 
 public void setTypeOfStructure(TypeOfStructureEnum typeOfStructure) {
 	TypeOfStructure = typeOfStructure;
+}
+
+public boolean isExtended() {
+	return Extended;
+}
+
+public void setExtended(boolean extended) {
+	Extended = extended;
 }
 
 
