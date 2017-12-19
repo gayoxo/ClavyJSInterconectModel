@@ -40,6 +40,8 @@ public class StructureJSON implements Serializable{
 	
 	protected String Value;
 	
+	protected Long ElementId;
+	
 	protected ArrayList<OperationalValueJSON> OperationalValues;  
 	
 	public enum TypeOfStructureEnum {Text,Resource,Link,Basic};
@@ -62,6 +64,7 @@ public class StructureJSON implements Serializable{
 		OperationalValues=new ArrayList<OperationalValueJSON>();
 		TypeOfStructure=TypeOfStructureEnum.Basic;
 		Extended=false;
+		ElementId=0l;
 	}
 	
 	
@@ -70,7 +73,10 @@ public class StructureJSON implements Serializable{
 	 * @param name Nombre del atributo.
 	 * @param browseable Define si es navegable
 	 */
-		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,boolean browseable,boolean Selected,boolean extended,boolean filtro, Long ClaseOf,String Value,ArrayList<OperationalValueTypeJSON> OperationalTypeValues,ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture) {
+		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,
+				boolean browseable,boolean Selected,boolean extended,boolean filtro,
+				Long ClaseOf,String Value,ArrayList<OperationalValueTypeJSON> OperationalTypeValues,
+				ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture,Long elementId) {
 			super();
 			Sons=new ArrayList<StructureJSON>();	
 			this.Id=id;
@@ -85,6 +91,7 @@ public class StructureJSON implements Serializable{
 			this.OperationalValues=OperationalValues;
 			this.TypeOfStructure=typeOfStruture;
 			Extended=extended;
+			ElementId=elementId;
 		}
 
 
@@ -250,5 +257,12 @@ public void setExtended(boolean extended) {
 	Extended = extended;
 }
 
+public Long getElementId() {
+	return ElementId;
+}
+
+public void setElementId(Long elementId) {
+	ElementId = elementId;
+}
 
 }
