@@ -44,6 +44,8 @@ public class StructureJSON implements Serializable{
 	
 	private boolean SelectedValue;
 	
+	protected Long Father;
+	
 	protected ArrayList<OperationalValueJSON> OperationalValues;  
 	
 	public enum TypeOfStructureEnum {Text,Resource,Link,Basic};
@@ -68,6 +70,7 @@ public class StructureJSON implements Serializable{
 		Extended=false;
 		ElementId=0l;
 		SelectedValue=false;
+		Father=0L;
 	}
 	
 	
@@ -79,7 +82,7 @@ public class StructureJSON implements Serializable{
 		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,
 				boolean browseable,boolean Selected,boolean extended,boolean filtro,
 				Long ClaseOf,String Value,boolean SelectedValue,ArrayList<OperationalValueTypeJSON> OperationalTypeValues,
-				ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture,Long elementId) {
+				ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture,Long elementId,Long Father) {
 			super();
 			Sons=new ArrayList<StructureJSON>();	
 			this.Id=id;
@@ -96,6 +99,7 @@ public class StructureJSON implements Serializable{
 			Extended=extended;
 			ElementId=elementId;
 			this.SelectedValue=SelectedValue;
+			this.Father=Father;
 		}
 
 
@@ -276,6 +280,15 @@ public boolean isSelectedValue() {
 
 public void setSelectedValue(boolean selectedValue) {
 	SelectedValue = selectedValue;
+}
+
+
+public Long getFather() {
+	return Father;
+}
+
+public void setFather(Long father) {
+	Father = father;
 }
 
 }
