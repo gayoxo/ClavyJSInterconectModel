@@ -30,6 +30,7 @@ public class StructureJSON implements Serializable{
 	
 	protected boolean Browseable;
 	
+	//if TypeOfStructureEnum=Basic in not afect
 	protected boolean Selected;
 	
 	protected boolean Extended;
@@ -38,11 +39,15 @@ public class StructureJSON implements Serializable{
 	
 	protected Long ClaseOf;
 	
+	//if TypeOfStructureEnum=Basic in not afect
 	protected String Value;
 	
 	protected Long ElementId;
 	
 	private boolean SelectedValue;
+	
+	//if TypeOfStructureEnum=Resource is a Number this place is the relatud URL To edit modify Value
+	private String URLValue;
 	
 	protected Long Father;
 	
@@ -71,6 +76,7 @@ public class StructureJSON implements Serializable{
 		ElementId=0l;
 		SelectedValue=false;
 		Father=0L;
+		URLValue="";
 	}
 	
 	
@@ -82,7 +88,8 @@ public class StructureJSON implements Serializable{
 		public StructureJSON(String name,ArrayList<Long> id,boolean multivalued,
 				boolean browseable,boolean Selected,boolean extended,boolean filtro,
 				Long ClaseOf,String Value,boolean SelectedValue,ArrayList<OperationalValueTypeJSON> OperationalTypeValues,
-				ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture,Long elementId,Long Father) {
+				ArrayList<OperationalValueJSON> OperationalValues,TypeOfStructureEnum typeOfStruture,Long elementId,Long Father,
+				String URLVAlue) {
 			super();
 			Sons=new ArrayList<StructureJSON>();	
 			this.Id=id;
@@ -100,6 +107,7 @@ public class StructureJSON implements Serializable{
 			ElementId=elementId;
 			this.SelectedValue=SelectedValue;
 			this.Father=Father;
+			this.URLValue=URLVAlue;
 		}
 
 
@@ -289,6 +297,14 @@ public Long getFather() {
 
 public void setFather(Long father) {
 	Father = father;
+}
+
+public String getURLValue() {
+	return URLValue;
+}
+
+public void setURLValue(String uRLValue) {
+	URLValue = uRLValue;
 }
 
 }
